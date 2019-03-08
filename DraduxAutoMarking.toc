@@ -1,0 +1,48 @@
+## Interface: 80000
+## Title: Dradux Auto Marking
+## Author: Dradux
+## Version: 0.1
+## Notes: Tool to setup your wished loot spec automatically.
+## OptionalDeps: ElvUI, LibStub, LibUIDropDownMenu, Ace3, LibRangeCheck-2.0, StdUi
+## SavedVariables: DraduxAutoMarkingDB
+
+#@no-lib-strip@
+libs\load_libs.xml
+#@end-no-lib-strip@
+
+Core.lua
+gui\MainFrame.lua
+gui\ModuleButton.lua
+gui\IconButton.lua
+gui\MdtInfoButton.lua
+gui\MarkerConfigurationFrame.lua
+gui\EnemyConfigurationFrame.lua
+gui\EnemyMarkerColumn.lua
+gui\EnemyMarkerButton.lua
+gui\MarkerIcon.lua
+gui\MarkerSelectionRow.lua
+gui\MarkerSelectionFrame.lua
+gui\TextFrame.lua
+gui\EnemyBadge.lua
+gui\EnemyIndexFrame.lua
+gui\EnemySelectionFrame.lua
+gui\WizardFrame.lua
+gui\HelpFrame.lua
+gui\MarkerMonitor.lua
+Log.lua
+Util.lua
+Gui.lua
+Actions.lua
+Marking.lua
+CombatLog.lua
+GroupSupport.lua
+Scanner.lua
+Import.lua
+Export.lua
+Wizard.lua
+Monitor.lua
+DraduxAutoMarking.lua
+Party.lua
+
+
+
