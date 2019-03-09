@@ -1,22 +1,20 @@
 local StdUi = LibStub("StdUi")
 
 function DraduxAutoMarking:InitializeMonitor()
+    local db = DraduxAutoMarking:GetDB()
     DraduxAutoMarking.monitor = StdUi:MarkerMonitor(UIParent)
-    DraduxAutoMarking.monitor:SetPoint("TOPLEFT", UIParent, "TOPLEFT", 200, -200)
+    DraduxAutoMarking.monitor:SetPoint(db.monitor.anchor, UIParent, db.monitor.anchorTo, db.monitor.xOffset, db.monitor.yOffset)
     DraduxAutoMarking.monitor:Hide()
 end
 
 function DraduxAutoMarking:ToggleMonitor()
     if not DraduxAutoMarking.monitor then
-        print("Initializing monitor")
         DraduxAutoMarking:InitializeMonitor()
     end
 
     if DraduxAutoMarking.monitor:IsShown() then
-        print("Hiding monitor")
         DraduxAutoMarking.monitor:Hide()
     else
-        print("Showing monitor")
         DraduxAutoMarking.monitor:Show()
     end
 end

@@ -35,8 +35,10 @@ function DraduxAutoMarking:IterateGroupMembers(forceParty)
                 ret = "raid" .. i
             end
         elseif forceParty or party then
-            if i <= partyMember then
-                ret = "party" .. i
+            if i == 1 then
+                ret = "player"
+            elseif i <= partyMember then
+                ret = "party" .. (i - 1)
             end
         end
 

@@ -67,7 +67,7 @@ StdUi:RegisterWidget("MarkerMonitor", function(self, parent)
     StdUi:GlueBottom(chargeName, window, -5, 5, "RIGHT")
 
     local chargeLabel = window:CreateFontString(nil, "OVERLAY", "GameFontNormal")
-    window.chargeName = chargeLabel
+    window.chargeLabel = chargeLabel
     chargeLabel:SetJustifyH("RIGHT")
     chargeLabel:SetJustifyV("CENTER")
     chargeLabel:SetTextColor(1, 1, 1, 1)
@@ -99,6 +99,18 @@ StdUi:RegisterWidget("MarkerMonitor", function(self, parent)
 
     window:SetScript("OnShow", function()
         window:Update()
+    end)
+
+    window:SetScript("OnHide", function()
+        -- Save current position
+        local db = DraduxAutoMarking:GetDB()
+        local anchor, _, anchorTo, xOffset, yOffset = window:GetPoint("TOPLEFT")
+        db.monitor = {
+            anchor = anchor,
+            anchorTo = anchorTo,
+            xOffset = xOffset,
+            yOffset = yOffset
+        }
     end)
 
     return window

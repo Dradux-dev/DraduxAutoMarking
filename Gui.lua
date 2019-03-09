@@ -32,6 +32,14 @@ function DraduxAutoMarking:InitializeWindow()
     StdUi:GlueTop(scrollPanel, window, 260, -40, "LEFT")
     scrollPanel:Hide()
 
+    local versionLabel = window:CreateFontString(nil, "OVERLAY", "GameFontNormal")
+    window.versionLabel = versionLabel
+    versionLabel:SetJustifyH("CENTER")
+    versionLabel:SetJustifyV("CENTER")
+    versionLabel:SetTextColor(1, 1, 1, 1)
+    versionLabel:SetText(DraduxAutoMarking:GetVersionString())
+    StdUi:GlueBottom(versionLabel, window, 0, 5, true)
+
     local textFrame = StdUi:TextFrame(window, 660, height - 80)
     window.textFrame = textFrame
     StdUi:GlueTop(textFrame, window, 260, -40, "LEFT")
@@ -184,6 +192,9 @@ function DraduxAutoMarking:ShowTextFrame(text, okayAction)
     window.textFrame:SetText(text)
     window.textFrame:SetOkay(okayAction)
 
+    if not window:IsShown() then
+        window:Show()
+    end
     window.textFrame:Show()
 end
 

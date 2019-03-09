@@ -9,5 +9,5 @@ DraduxAutoMarking.version = {
 
 function DraduxAutoMarking:GetVersionString()
     local version = DraduxAutoMarking.version
-    return string.format("%d.%d.%d", version.major)
+    return string.format("%d.%d.%d", version.major, version.minor, version.hotfix)
 end
